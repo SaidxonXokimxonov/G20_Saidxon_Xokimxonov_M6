@@ -1,0 +1,117 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Board */
+.board {
+  @apply min-h-screen bg-gray-100 p-8;
+}
+
+.board__header {
+  @apply mb-8 flex items-center justify-between;
+}
+
+.board__title {
+  @apply text-3xl font-bold text-gray-900;
+}
+
+.board__columns {
+  @apply flex gap-4 overflow-x-auto pb-4;
+}
+
+/* Column */
+.column {
+  @apply w-72 shrink-0 rounded bg-gray-200 p-4;
+}
+
+.column__header {
+  @apply mb-4 flex items-center justify-between;
+}
+
+.column__title {
+  @apply font-semibold text-gray-700;
+}
+
+.column__delete {
+  @apply text-gray-500 hover:text-gray-700;
+}
+
+.column__cards {
+  @apply space-y-2;
+}
+
+.column__add-card {
+  @apply mt-3 w-full px-2 text-left text-gray-500 hover:text-gray-700;
+}
+
+/* Card */
+.card {
+  @apply cursor-pointer rounded bg-white p-3 shadow hover:bg-gray-50;
+}
+
+.card__title {
+  @apply font-medium text-gray-800;
+}
+
+.card__description {
+  @apply mt-1 text-sm text-gray-600;
+}
+
+.card__footer {
+  @apply mt-2 flex items-center justify-between;
+}
+
+.card__date {
+  @apply text-xs text-gray-500;
+}
+
+.card__delete {
+  @apply text-xs text-red-500 hover:text-red-700;
+}
+
+/* Button */
+.button {
+  @apply rounded px-4 py-2 font-medium transition-colors;
+}
+
+.button--primary {
+  @apply bg-blue-500 text-white hover:bg-blue-600;
+}
+
+/* Drag and Drop styles */
+.card--dragging {
+  @apply opacity-50;
+}
+
+.column--drag-over {
+  @apply bg-gray-300;
+}
+
+/* Scrollbar styles */
+.board__columns::-webkit-scrollbar {
+  @apply h-2;
+}
+
+.board__columns::-webkit-scrollbar-track {
+  @apply bg-gray-100;
+}
+
+.board__columns::-webkit-scrollbar-thumb {
+  @apply rounded-full bg-gray-400;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card--new {
+  animation: fadeIn 0.3s ease-out forwards;
+}
