@@ -56,11 +56,11 @@
       <!-- Header -->
       <header class="board__header">
         <h1 class="board__title">My Trello Board</h1>
-        <button class="button button--primary">Add Column</button>
+        <button id="openModal" onclick="openModal()" class="button button--primary">Add Column</button>
       </header>
 
       <!-- Columns Container -->
-      <div class="board__columns">
+      <div class="board__columns" id="boardColumns">
         <!-- To Do Column -->
         <div class="column">
           <div class="column__header">
